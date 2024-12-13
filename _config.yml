@@ -1,5 +1,16 @@
-name: "chen haiqing's blog"
+name: Jekyll Themes
+url: http://matt.harzewski.com
+description: Insert tagline here
 
-description: "learning and pricticing make skillfull"
+permalink: /themes/:title/
 
-theme: minima
+plugins: [jekyll-paginate]
+
+highlighter: pygments
+paginate: 20
+
+markdown: rdiscount
+rdiscount:
+    extensions: ['smart']
+
+exclude: ['README.md', 'Gemfile.lock', 'Gemfile', 'Rakefile', 'vendor']
