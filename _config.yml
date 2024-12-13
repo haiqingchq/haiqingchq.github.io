@@ -1,40 +1,31 @@
-title: Your awesome title
-author: GitHub User
-email: your-email@domain.com
-copyright: © 2019 GitHub User
-description: > # this means to ignore newlines until "show_excerpts:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+# Site settings
+title: Liang Ke Jin
+description: Liang Ke Jin
+favicon: /assets/img/avatar.JPG
+baseurl:
+url: https://liungkejin.github.io
+rss_url:
 
-show_excerpts: false # set to true to show excerpts on the homepage
+# Build settings
 
-lin:
-  date_format: "%b %-d, %Y"
+highlight: true
+#highlighter: rouge
 
-  # path to the author avatar image
-  avatar_path: assets/images/avatar.jpg
+timezone: Asia/Shanghai
 
-  # generate social links
-  social_links:
-    twitter: jekyllrb
-    github:  jekyll
-    medium:  jekyll
-    rss: rss
-    dribbble: jekyll
-    facebook: jekyll
-    flickr:   jekyll
-    instagram: jekyll
-    linkedin: jekyll
-    pinterest: jekyll
-    youtube_user: jekyll
-    youtube_channel: UC8CXR0-3I70i1tfPg1PAE1g
-    telegram: jekyll
-    googleplus: +jekyll
-    keybase: jekyll
+markdown: kramdown
+kramdown:
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  enable_coderay: false
 
-theme: lin
-
-plugins:
- - jekyll-feed
- - jekyll-seo-tag
+  coderay:
+    coderay_wrap: div
+    coderay_line_numbers: inline
+    coderay_line_numbers_start: 1
+    coderay_tab_width: 4
+    coderay_bold_every: 10
+    coderay_css: style

@@ -1,9 +1,13 @@
-<div class="row">
-  <div class="col-md-6 has-space-top has-space-bottom">
-    {{ site.copyright | escape }}, styled with <a href="https://lin-css.netlify.com/">lin.css</a>
-  </div>
-  <div class="col-md-6 has-space-top has-space-bottom text-right">
-    {%- include social.html -%}
-    <div class="spacer"></div>
-  </div>
+<div class="footer-copyright">
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="col-md-12">
+                Copyright &copy; 2016 {{ site.data.author.name }} - All rights reserved.
+            </div>
+        </div>
+    </div>
 </div>
+<script type="text/javascript" src="/assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="/assets/js/bootstrap.min.js"></script>
+
+{% include googleanalytics.html %}
