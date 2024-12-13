@@ -1,38 +1,35 @@
 ---
 layout: default
 ---
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="row">
+    <div class="col-md-2 col-sm-12 is-hover-opaque">
+      <p class="has-space-top">
+        <time datetime="{{ page.date | date_to_xmlschema }}">
+          {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+          {{ page.date | date: date_format }}
+        </time>
+        {%- if page.author -%}
+        <br><span>{{ page.author | escape }}</span>
+        {%- endif -%}</p>
+    </div>
+    <div class="col-md-10 col-sm-12">
+      <h1>{{ page.title | escape }}</h1>
+    </div>
+  </header>
 
-<div id="post" class="container">
+  <div class="row">
+    <div class="col-md-2 col-sm-12">
+      &nbsp;
+    </div>
+    <div class="col-md-10 col-sm-12 has-space-top has-space-bottom">
+      {{ content }}
+    </div>
+  </div>
 
-	<div class="postthumb"><img src="/thumbnails/{{ page.thumbnail }}" /></div>
+  {%- if site.disqus.shortname -%}
+  {%- include disqus_comments.html -%}
+  {%- endif -%}
 
-	<h1>{{ page.title }}</h1>
-
-	<div class="meta clearfix">
-		<strong>Author:</strong> {{ page.author }}
-
-		{% if page.license %}
-			<br /><strong>License:</strong> {{ page.license }}
-		{% endif %}
-
-		<br /><br />
-		{% if page.homepage %}
-			<a class="btn" href="{{ page.homepage }}"><i class="icon-home"></i> Homepage</a>
-		{% endif %}
-		{% if page.download %}
-			<a class="btn" href="{{ page.download }}"><i class="icon-download-alt"></i> Download</a>
-		{% endif %}
-		{% if page.demo %}
-			<a class="btn" href="{{ page.demo }}"><i class="icon-road"></i> Demo</a>
-		{% endif %}
-		{% if page.license_link %}
-			<a class="btn" href="{{ page.license_link }}"><i class="icon-file"></i> License</a>
-		{% endif %}
-	</div>
-
-
-	<div class="post-content">
-	{{ content }}
-	</div>
-
-</div>
+  <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
+</article>
