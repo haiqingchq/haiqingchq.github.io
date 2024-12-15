@@ -1,4 +1,5 @@
 ---
+category: k8s
 layout: post_layout
 title: k8s部署minio 证书自动续期
 time: 2024年12月15日 星期日

@@ -2,6 +2,9 @@
 layout: blog_layout
 ---
 {% for post in site.posts %}
+    <!-- 只显示k8s的文章 -->
+    <h3>K8S</h3>
+    {% if post.categories == 'k8s' %}
     <section class="smenu">
         {{ post.time  | date: "%Y/%m/%d" }}
         &nbsp;&nbsp;
@@ -10,4 +13,7 @@ layout: blog_layout
             &nbsp;&nbsp; {{post.title}} &nbsp;&nbsp;
         </a>
     </section>
+    {% else %}
+        {% continue %}
+    {% endif %}
 {% endfor %}
