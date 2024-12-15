@@ -1,7 +1,7 @@
 ---
 layout: post_layout
-title: k8s 部署 minio 证书的自动证书续期
-time: 2024年012月15日 星期日
+title: k8s部署minio 证书自动续期
+time: 2024年12月15日 星期日
 location: 杭州
 pulished: true
 excerpt_separator: "---"
