@@ -5,14 +5,25 @@ layout: blog_layout
     <!-- 只显示k8s的文章 -->
     <h3>K8S</h3>
     {% if post.category == 'k8s' %}
-    <section class="smenu">
-        {{ post.time  | date: "%Y/%m/%d" }}
-        &nbsp;&nbsp;
-        <a href="{{post.url}}">
-            <span class="glyphicon glyphicon-hand-right">  </span>
-            &nbsp;&nbsp; {{post.title}} &nbsp;&nbsp;
-        </a>
-    </section>
+        <section class="smenu">
+            {{ post.time  | date: "%Y/%m/%d" }}
+            &nbsp;&nbsp;
+            <a href="{{post.url}}">
+                <span class="glyphicon glyphicon-hand-right">  </span>
+                &nbsp;&nbsp; {{post.title}} &nbsp;&nbsp;
+            </a>
+        </section>
+    <!-- 只显示docker的文章 -->
+    <h2>Docker</h2>
+    {% else if post.category == 'docker' %}
+        <section class="smenu">
+            {{ post.time  | date: "%Y/%m/%d" }}
+            &nbsp;&nbsp;
+            <a href="{{post.url}}">
+                <span class="glyphicon glyphicon-hand-right">  </span>
+                &nbsp;&nbsp; {{post.title}} &nbsp;&nbsp;
+            </a>
+        </section>
     {% else %}
         {% continue %}
     {% endif %}
