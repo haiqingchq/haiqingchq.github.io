@@ -1,35 +1,11 @@
 # Author settings
-name: 梁窠金
-title: Android 开发工程师
-address: 中国, 上海
-email: liungkejin@foxmail.com
-github: liungkejin
+name: 陈海清
+title: k8s 开发工程师
+address: 中国, 浙江杭州
+email: 2538302280@qq.com
+github: haiqingchq
 gavatar: /assets/img/owner.jpg
 workHistory:
-- work4:
-  company: 上海本趣网络科技有限公司
-  location: 中国, 上海
-  title: Android & Unity & AR 开发工程师
-  started: 2016
-  duration: (2016.5 - Present)
-  description: 开发 "无他相机" 安卓端，使用 unity 实现 3D 特效
-
-- work3:
-  company: 上海大银幕网络科技有限公司
-  location: 中国，上海
-  title: Android 开发工程师
-  started: 2015
-  duration: (2015.10 - 2016.5)
-  description: 开发和维护 "公证电影" App
-
-- work2:
-  company: 比亚迪精密制造上海分公司
-  location: 中国，上海
-  title: Android 开发工程师
-  started: 2014
-  duration: (2014.8 - 2015.8)
-  description: 在Android系统环境下修复所存在的 bug, 并开发新功能, 主要负责 RIL/Telephony
-
 - work1:
   company: 合肥卓远电子科技有限公司
   location: 中国, 合肥
@@ -40,12 +16,12 @@ workHistory:
 
 educationHistory:
 - education1:
-  organization: 安徽大学
-  degree: 学士
-  major: 化学工程与工艺
-  started: 2010
-  duration: (2010.9 - 2014.7)
-  description: 自学 C/C++, Java, Linux, 培训并参加过 ACM 比赛
+  organization: 南华大学
+  degree: 本科
+  major: 大数据科学与大数据技术
+  started: 2024
+  duration: (2021.9 - 2025.6)
+  description: 熟悉Goland，K8s，Docker
 languages:
 - language1:
   name: 中文
