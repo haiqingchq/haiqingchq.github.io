@@ -8,6 +8,8 @@ pulished: true
 excerpt_separator: "##"
 ---
 
+这个是最近遇到的一个问题，非常的棘手
+
 ## 1、部署K8s集群
   首先，要有一个K8s集群，这里就不赘述了。如果没有的话，可以使用kind起一个简单的集群。
 ## 2、起minio-operator
