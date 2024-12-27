@@ -46,6 +46,8 @@ excerpt_separator: "##"
 
 暂时没有理解为什么 在一个节点，16个1TB驱动器组成的mino集群里面，不同纠错码。回影响到总存储空间，存储比例。
 
+官方计算器：https://min.io/product/erasure-code-calculator
+
 | 奇偶校验 | 总存储空间 | 存储比例  | 用于读取操作的最小驱动器 | 用于写操作的最小驱动数量 |
 |:----:|:-----:|:-----:|:------------:|:------------:|
 | EC:4 | 12TB  | 0.75  |      12      |      12      |
@@ -79,4 +81,30 @@ excerpt_separator: "##"
 ### 现在配置文件中配置的东西
 
 1. MINIO_STORAGE_CLASS_STANDARD 在 start.yaml 中指定为 EC:2。就是指定纠错码数量为2.
-2. 
+
+
+
+## 官方文档
+
+1. [minio erasure code](https://min.io/docs/minio/linux/operations/concepts/erasure-coding.html)
+
+2. [minio object healing](https://min.io/docs/minio/linux/operations/concepts/healing.html)
+
+- 在这个文档中，很明显的提到了，需要恢复数据，需要最少一个校验分片。来恢复剩下的所有分片，包括损坏或者丢失的校验分片。
+但是如果所有校验分片都丢失了的话，数据将无法恢复。这个是需要注意的。因此在设置EC值的时候还是合理。
+
+- 在还有足够校验分片的情况下，数据分片最多丢失设置的EC值的数量。任然能够恢复。超过这个值，数据将无法恢复。
+
+- 当我直接删除一个桶中的对象的时候，我重新向minio发送一个get请求，桶中被删除的对象就直接会被恢复。
+
+- 当我在pv中，直接删除一个桶。然后直接发送一个get请求，被删除的桶不会被恢复。我直接使用 `mkdir test` 命令创建一个桶。 
+然后重新发送一个GET请求， 被删除的数据仍然没有被恢复。 但是我使用 `mc admin heal test/test` 重建这个桶。然后重新
+发送GET请求。被删除的对象将会被恢复。这是一个有趣的现象。
+
+但是我能正常的将文件下载下来，显而易见的事情就是。数据已经被恢复了。但是因为在这个drivers上面的桶不存在了。minio认为
+这个pvc已经存坏了。然后就将恢复的数据重新存储到另外一个pvc上面。
+
+但是有趣的事情就是，就算数据已经恢复了。我在当前这个pvc上面。使用 `mc admin heal test/test` 命令重建这个桶。重新
+下载数据的时候，这个数据又重新回到了这个pvc上面。但是不确定回到这个pvc上面的数据分片是不是原来的数据分片。
+
+[minio的阈值和简单的规则限制](https://min.io/docs/minio/linux/operations/concepts/thresholds.html)
