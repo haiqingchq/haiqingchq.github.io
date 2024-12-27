@@ -38,7 +38,7 @@ excerpt_separator: "##"
 
 1、当部分磁盘损坏的时候，支持从剩余磁盘中可靠的恢复数据。
 
-    - 使用的是RS(Reed-Solomon)，中文名叫：里德-所罗门类纠错码
+- 使用的是RS(Reed-Solomon)，中文名叫：里德-所罗门类纠错码
 
 2、这里面提到了一个叫做bit rot protection 的东西。使用的是 [HighwayHash算法](https://github.com/minio/highwayhash)来优化的。
 
@@ -97,14 +97,14 @@ excerpt_separator: "##"
 
 - 当我直接删除一个桶中的对象的时候，我重新向minio发送一个get请求，桶中被删除的对象就直接会被恢复。
 
-- 当我在pv中，直接删除一个桶。然后直接发送一个get请求，被删除的桶不会被恢复。我直接使用 `mkdir test` 命令创建一个桶。 
-然后重新发送一个GET请求， 被删除的数据仍然没有被恢复。 但是我使用 `mc admin heal test/test` 重建这个桶。然后重新
+- 当我在pv中，直接删除一个桶。然后直接发送一个get请求，被删除的桶不会被恢复。我直接使用`mkdir test`命令创建一个桶。 
+然后重新发送一个GET请求， 被删除的数据仍然没有被恢复。 但是我使用`mc admin heal test/test`重建这个桶。然后重新
 发送GET请求。被删除的对象将会被恢复。这是一个有趣的现象。
 
 但是我能正常的将文件下载下来，显而易见的事情就是。数据已经被恢复了。但是因为在这个drivers上面的桶不存在了。minio认为
 这个pvc已经存坏了。然后就将恢复的数据重新存储到另外一个pvc上面。
 
-但是有趣的事情就是，就算数据已经恢复了。我在当前这个pvc上面。使用 `mc admin heal test/test` 命令重建这个桶。重新
+但是有趣的事情就是，就算数据已经恢复了。我在当前这个pvc上面。使用`mc admin heal test/test`命令重建这个桶。重新
 下载数据的时候，这个数据又重新回到了这个pvc上面。但是不确定回到这个pvc上面的数据分片是不是原来的数据分片。
 
 [minio的阈值和简单的规则限制](https://min.io/docs/minio/linux/operations/concepts/thresholds.html)
