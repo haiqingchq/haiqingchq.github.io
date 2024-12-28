@@ -1,9 +1,9 @@
 ---
 layout: blog_layout
 ---
+<h3>K8S</h3>
 {% for post in site.posts %}
     <!-- 只显示k8s的文章 -->
-    <h3>K8S</h3>
     {% if post.category == 'k8s' %}
         <section class="smenu">
             {{ post.time  | date: "%Y/%m/%d" }}
@@ -13,8 +13,13 @@ layout: blog_layout
                 &nbsp;&nbsp; {{post.title}} &nbsp;&nbsp;
             </a>
         </section>
+    {% else %}
+        {% continue %}
+    {% endif %}
+{% endfor %}
     <!-- 只显示docker的文章 -->
-    <h3>Docker</h3>
+<h3>Docker</h3>
+{% for post in site.posts %}
     {% else if post.category == 'docker' %}
         <section class="smenu">
             {{ post.time  | date: "%Y/%m/%d" }}
