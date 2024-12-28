@@ -20,7 +20,7 @@ layout: blog_layout
     <!-- 只显示docker的文章 -->
 <h3>Docker</h3>
 {% for post in site.posts %}
-    {% else if post.category == 'docker' %}
+    {% if post.category == 'docker' %}
         <section class="smenu">
             {{ post.time  | date: "%Y/%m/%d" }}
             &nbsp;&nbsp;
