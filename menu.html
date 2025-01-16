@@ -65,3 +65,21 @@ layout: blog_layout
         {% continue %}
     {% endif %}
 {% endfor %}
+
+<h3>工作日志</h3>
+{% for post in site.posts %}
+    {% if post.category == 'daily' %}
+        <section class="smenu">
+            {{ post.time  | date: "%Y/%m/%d" }}
+            &nbsp;&nbsp;
+            <a href="{{post.url}}">
+                <span class="glyphicon glyphicon-hand-right">  </span>
+                &nbsp;&nbsp; {{post.title}} &nbsp;&nbsp;
+            </a>
+        </section>
+    {% else %}
+        {% continue %}
+    {% endif %}
+{% endfor %}
+
+
