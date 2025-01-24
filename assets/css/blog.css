@@ -114,6 +114,7 @@ nav.menu li:last-child {
 
 article.preview {
     margin-bottom: 4em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .post-title {
