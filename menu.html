@@ -36,18 +36,18 @@ layout: blog_layout
 
 <h3>eBPF</h3>
 {% for post in site.posts %}
-{% if post.category == 'ebpf' %}
-<section class="smenu">
-    {{ post.time  | date: "%Y/%m/%d" }}
+    {% if post.category == 'ebpf' %}
+        <section class="smenu">
+            {{ post.time  | date: "%Y/%m/%d" }}
     &nbsp;&nbsp;
-    <a href="{{post.url}}">
-        <span class="glyphicon glyphicon-hand-right">  </span>
-        &nbsp;&nbsp; {{post.title}} &nbsp;&nbsp;
-    </a>
-</section>
-{% else %}
-{% continue %}
-{% endif %}
+            <a href="{{post.url}}">
+                <span class="glyphicon glyphicon-hand-right">  </span>
+        &nbsp;&nbsp;         {{post.title}} &nbsp;&nbsp;
+            </a>
+        </section>
+    {% else %}
+        {% continue %}
+    {% endif %}
 {% endfor %}
 
 
