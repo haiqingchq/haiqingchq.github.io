@@ -33,18 +33,12 @@ programmingSkills:
 - Goland:
   name: Goland
   percentage: 90%
+- Python:
+  name: Python
+  percentage: 80%%
 - Bash:
   name: Bash Shell
   percentage: 90%
 - CPP:
   name: C/C++
-  percentage: 80%
-- PHP:
-  name: PHP
-  percentage: 30%
-- Python:
-  name: Python
-  percentage: 30%
-- Kotlin:
-  name: Kotlin
-  percentage: 70%
+  percentage: 20%
