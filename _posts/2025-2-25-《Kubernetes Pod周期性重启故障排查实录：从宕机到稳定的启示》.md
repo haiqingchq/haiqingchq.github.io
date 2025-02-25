@@ -1,5 +1,5 @@
 ---
-category: docker
+category: k8s
 layout: post_layout
 title: 《Kubernetes Pod周期性重启故障排查实录：从宕机到稳定的启示》
 time: 2025年2月25日 星期二
