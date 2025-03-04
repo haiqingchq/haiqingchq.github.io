@@ -109,7 +109,3 @@ kubectl exec <pod-name> -- jmap -dump:live,file=/tmp/heap.bin 1
 kubectl cp <pod-name>:/tmp/heap.bin ./analysis/
 ```
 
----
-
-此框架兼顾技术细节与叙事逻辑，可灵活补充您的实际案例数据。建议在关键排查步骤插入代码片段/示意图，增强可操作性。
-
