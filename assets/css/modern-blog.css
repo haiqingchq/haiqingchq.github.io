@@ -363,7 +363,7 @@ nav.menu li a:active {
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 2.5rem;
+  padding: 2rem;
   border-radius: 20px;
   box-shadow: var(--shadow-medium);
   position: relative;
@@ -389,8 +389,8 @@ nav.menu li a:active {
 
 /* 现代化文章预览卡片 */
 article.preview {
-  margin-bottom: 3rem;
-  padding: 2rem;
+  margin-bottom: 2.5rem;
+  padding: 1.5rem;
   background: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.3);
@@ -1069,18 +1069,19 @@ p.readmore {
 
 /* 现代化代码块样式 */
 pre {
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-  color: #f8fafc;
-  border-radius: 12px;
-  padding: 1.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  font-size: 0.95rem;
+  background: linear-gradient(135deg, #0a0f1c 0%, #111827 100%);
+  color: #ffffff;
+  border-radius: 8px;
+  padding: 1rem 1.2rem;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  font-size: 0.9rem;
   overflow-x: auto;
-  box-shadow: var(--shadow-medium);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   position: relative;
   font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', monospace;
-  line-height: 1.6;
+  line-height: 1.5;
   font-weight: 500;
+  margin: 1rem 0;
 }
 
 pre code {
@@ -1099,74 +1100,76 @@ pre::before {
   top: 0;
   left: 0;
   right: 0;
-  height: 3px;
+  height: 2px;
   background: var(--gradient-accent);
-  border-radius: 12px 12px 0 0;
+  border-radius: 8px 8px 0 0;
 }
 
-/* 增强的语法高亮颜色 - 更亮更清晰 */
-pre .hljs-keyword { color: #ff79c6; font-weight: 600; }
-pre .hljs-string { color: #50fa7b; }
-pre .hljs-number { color: #bd93f9; }
-pre .hljs-comment { color: #94a3b8; font-style: italic; }
-pre .hljs-function { color: #8be9fd; font-weight: 600; }
-pre .hljs-variable { color: #f8fafc; }
-pre .hljs-attr { color: #ffb86c; }
-pre .hljs-tag { color: #ff79c6; }
-pre .hljs-name { color: #8be9fd; }
-pre .hljs-attribute { color: #50fa7b; }
+/* 增强的语法高亮颜色 - 超高对比度 */
+pre .hljs-keyword { color: #ff7ac6; font-weight: 700; text-shadow: 0 0 1px rgba(255, 122, 198, 0.5); }
+pre .hljs-string { color: #5af78e; text-shadow: 0 0 1px rgba(90, 247, 142, 0.3); }
+pre .hljs-number { color: #c792ea; font-weight: 600; }
+pre .hljs-comment { color: #a1a1aa; font-style: italic; }
+pre .hljs-function { color: #82f7ff; font-weight: 700; text-shadow: 0 0 1px rgba(130, 247, 255, 0.3); }
+pre .hljs-variable { color: #ffffff; font-weight: 500; }
+pre .hljs-attr { color: #ffcc02; font-weight: 600; }
+pre .hljs-tag { color: #ff7ac6; font-weight: 600; }
+pre .hljs-name { color: #82f7ff; font-weight: 600; }
+pre .hljs-attribute { color: #5af78e; }
 
-/* 命令行参数和标志 - 使用最亮的颜色 */
+/* 命令行参数和标志 - 最高亮度 */
 pre .hljs-params,
 pre .hljs-built_in,
 pre .hljs-literal { 
-  color: #fbbf24; 
-  font-weight: 700;
-  text-shadow: 0 0 2px rgba(251, 191, 36, 0.5);
+  color: #ffeb3b; 
+  font-weight: 800;
+  text-shadow: 0 0 3px rgba(255, 235, 59, 0.7);
 }
 
 /* 特殊符号和操作符 */
 pre .hljs-symbol,
 pre .hljs-operator { 
-  color: #f472b6; 
-  font-weight: 600; 
+  color: #ff6b9d; 
+  font-weight: 700; 
+  text-shadow: 0 0 1px rgba(255, 107, 157, 0.5);
 }
 
 /* 类型和类名 */
 pre .hljs-type,
 pre .hljs-class { 
-  color: #60a5fa; 
-  font-weight: 600; 
+  color: #64b5f6; 
+  font-weight: 700; 
 }
 
 /* 行内代码样式 */
 code {
   color: #dc2626;
-  background: linear-gradient(135deg, rgba(220, 38, 38, 0.15), rgba(220, 38, 38, 0.08));
-  padding: 0.3rem 0.6rem;
-  border-radius: 6px;
+  background: linear-gradient(135deg, rgba(220, 38, 38, 0.2), rgba(220, 38, 38, 0.1));
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
   font-size: 0.85em;
-  border: 1px solid rgba(220, 38, 38, 0.25);
+  border: 1px solid rgba(220, 38, 38, 0.3);
   font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', monospace;
   font-weight: 600;
 }
 
 /* 确保代码块中的文本可见 */
 .post-content pre {
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-  color: #f8fafc;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: linear-gradient(135deg, #0a0f1c 0%, #111827 100%);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  margin: 1rem 0;
 }
 
 .post-content code {
   color: #dc2626;
-  background: linear-gradient(135deg, rgba(220, 38, 38, 0.15), rgba(220, 38, 38, 0.08));
-  border: 1px solid rgba(220, 38, 38, 0.25);
+  background: linear-gradient(135deg, rgba(220, 38, 38, 0.2), rgba(220, 38, 38, 0.1));
+  border: 1px solid rgba(220, 38, 38, 0.3);
 }
 
 /* 针对特定模式的增强 */
 .post-content pre code {
-  color: #f8fafc;
+  color: #ffffff;
   font-weight: 500;
 }
 
