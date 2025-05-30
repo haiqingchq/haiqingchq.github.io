@@ -1069,17 +1069,18 @@ p.readmore {
 
 /* 现代化代码块样式 */
 pre {
-  background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
-  color: #e2e8f0;
+  background: linear-gradient(135deg, #1e2937 0%, #111827 100%);
+  color: #f9fafb;
   border-radius: 12px;
   padding: 1.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   font-size: 0.9rem;
   overflow-x: auto;
   box-shadow: var(--shadow-light);
   position: relative;
   font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
   line-height: 1.6;
+  font-weight: 500;
 }
 
 pre code {
@@ -1089,6 +1090,7 @@ pre code {
   border: none;
   border-radius: 0;
   font-size: inherit;
+  font-weight: inherit;
 }
 
 pre::before {
@@ -1102,35 +1104,79 @@ pre::before {
   border-radius: 12px 12px 0 0;
 }
 
-/* 语法高亮颜色 */
-pre .hljs-keyword { color: #ff79c6; }
+/* 增强的语法高亮颜色 */
+pre .hljs-keyword { color: #ff79c6; font-weight: 600; }
 pre .hljs-string { color: #50fa7b; }
 pre .hljs-number { color: #bd93f9; }
-pre .hljs-comment { color: #6272a4; font-style: italic; }
-pre .hljs-function { color: #8be9fd; }
+pre .hljs-comment { color: #8fadc7; font-style: italic; }
+pre .hljs-function { color: #8be9fd; font-weight: 600; }
 pre .hljs-variable { color: #f8f8f2; }
+pre .hljs-attr { color: #ffb86c; }
+pre .hljs-tag { color: #ff79c6; }
+pre .hljs-name { color: #8be9fd; }
+pre .hljs-attribute { color: #50fa7b; }
+
+/* 命令行参数和标志 */
+pre .hljs-params,
+pre .hljs-built_in,
+pre .hljs-literal { 
+  color: #ffd93d; 
+  font-weight: 600; 
+}
+
+/* 特殊符号和操作符 */
+pre .hljs-symbol,
+pre .hljs-operator { 
+  color: #ff6b9d; 
+  font-weight: 600; 
+}
+
+/* 类型和类名 */
+pre .hljs-type,
+pre .hljs-class { 
+  color: #74c7ec; 
+  font-weight: 600; 
+}
 
 /* 行内代码样式 */
 code {
-  color: #e74c3c;
-  background: linear-gradient(135deg, rgba(231, 76, 60, 0.1), rgba(231, 76, 60, 0.05));
+  color: #dc2626;
+  background: linear-gradient(135deg, rgba(220, 38, 38, 0.15), rgba(220, 38, 38, 0.08));
   padding: 0.3rem 0.6rem;
   border-radius: 6px;
   font-size: 0.85em;
-  border: 1px solid rgba(231, 76, 60, 0.2);
+  border: 1px solid rgba(220, 38, 38, 0.25);
   font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
   font-weight: 600;
 }
 
 /* 确保代码块中的文本可见 */
 .post-content pre {
-  background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
-  color: #e2e8f0;
+  background: linear-gradient(135deg, #1e2937 0%, #111827 100%);
+  color: #f9fafb;
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .post-content code {
-  color: #e74c3c;
-  background: linear-gradient(135deg, rgba(231, 76, 60, 0.1), rgba(231, 76, 60, 0.05));
+  color: #dc2626;
+  background: linear-gradient(135deg, rgba(220, 38, 38, 0.15), rgba(220, 38, 38, 0.08));
+  border: 1px solid rgba(220, 38, 38, 0.25);
+}
+
+/* 针对特定模式的增强 */
+.post-content pre code {
+  color: #f9fafb;
+  font-weight: 500;
+}
+
+/* 特殊处理双横线参数 */
+.post-content pre code:contains("--") {
+  color: #ffd93d;
+}
+
+/* 代码块内的特殊文本处理 */
+.post-content pre {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 /* 现代化块引用样式 */
@@ -1429,4 +1475,41 @@ blockquote::before {
   transform: translateY(-5px) scale(1.1);
   background: rgba(255, 255, 255, 0.2);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-} 
+}
+
+/* 命令行参数专用样式 */
+.post-content pre,
+.post-content code {
+  /* 自定义高亮规则 */
+}
+
+.post-content pre code,
+.post-content pre {
+  /* 提高整体对比度 */
+  color: #f8fafc;
+  font-weight: 500;
+}
+
+/* 通过伪元素和选择器增强可读性 */
+pre::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+}
+
+/* 增强JavaScript中的正则匹配 */
+.hljs-params { color: #ffd93d !important; font-weight: 600 !important; }
+.hljs-built_in { color: #ffd93d !important; font-weight: 600 !important; }
+.hljs-literal { color: #74c7ec !important; font-weight: 600 !important; }
+.hljs-meta { color: #8fadc7 !important; }
+.hljs-meta-keyword { color: #ff79c6 !important; font-weight: 600 !important; }
+.hljs-meta-string { color: #50fa7b !important; }
+
+/* 特殊字符和操作符高亮 */
+.hljs-punctuation { color: #cdd6f4 !important; }
+.hljs-operator { color: #ff6b9d !important; font-weight: 600 !important; }
+.hljs-symbol { color: #ffd93d !important; font-weight: 700 !important; } 
