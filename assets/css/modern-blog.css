@@ -90,7 +90,7 @@ h1, h2, h3, h4, h5, h6 {
 /* 现代化导航菜单 */
 nav.menu {
   margin-top: 1.5rem;
-  padding: 0.8rem 0;
+  padding: 1rem 0;
   border-top: 1px solid var(--border-color);
 }
 
@@ -100,52 +100,34 @@ nav.menu ul {
   margin: 0;
   padding: 0;
   list-style: none;
+  gap: 1rem;
 }
 
 nav.menu li {
   position: relative;
 }
 
-nav.menu li:not(:last-child)::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%);
-  height: 20px;
-  width: 1px;
-  background-color: var(--border-color);
-}
-
 nav.menu li a {
-  color: var(--primary-color);
+  background-color: var(--secondary-color);
+  color: white;
   font-weight: 500;
   text-decoration: none;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
+  padding: 0.7rem 1.5rem;
+  border-radius: 25px;
+  display: inline-block;
   transition: all 0.3s ease;
-  position: relative;
-  padding: 0.5rem 1.2rem;
-  display: block;
-}
-
-nav.menu li a:after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: var(--secondary-color);
-  transition: width 0.3s ease;
+  box-shadow: 0 2px 8px rgba(52, 152, 219, 0.3);
 }
 
 nav.menu li a:hover {
-  color: var(--secondary-color);
+  background-color: var(--primary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(52, 152, 219, 0.4);
 }
 
-nav.menu li a:hover:after {
-  width: 70%;
+nav.menu li a:active {
+  transform: translateY(0);
 }
 
 /* 现代化博客主体 */
@@ -324,19 +306,12 @@ blockquote {
   
   nav.menu ul {
     flex-wrap: wrap;
-  }
-  
-  nav.menu li {
-    margin: 0.3rem 0;
-  }
-  
-  nav.menu li:not(:last-child)::after {
-    display: none;
+    gap: 0.5rem;
   }
   
   nav.menu li a {
-    padding: 0.5rem 0.8rem;
-    font-size: 0.9rem;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.85rem;
   }
   
   .blogmain {
