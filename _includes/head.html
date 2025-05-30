@@ -30,36 +30,4 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   
-  <script>
-    // 增强代码高亮，特别是命令行参数
-    document.addEventListener('DOMContentLoaded', function() {
-      // 查找所有代码块
-      const codeBlocks = document.querySelectorAll('pre code, code');
-      
-      codeBlocks.forEach(block => {
-        let html = block.innerHTML;
-        
-        // 高亮 -- 开头的参数
-        html = html.replace(/(--[\w-]+)/g, '<span style="color: #ffd93d; font-weight: 700;">$1</span>');
-        
-        // 高亮 - 开头的短参数
-        html = html.replace(/(\s|^)(-[a-zA-Z])\b/g, '$1<span style="color: #ff6b9d; font-weight: 600;">$2</span>');
-        
-        // 高亮环境变量
-        html = html.replace(/(\$[A-Z_][A-Z0-9_]*)/g, '<span style="color: #74c7ec; font-weight: 600;">$1</span>');
-        
-        // 高亮文件路径
-        html = html.replace(/(\/[\w\-\.\/]+)/g, '<span style="color: #8be9fd;">$1</span>');
-        
-        // 高亮 IP 地址
-        html = html.replace(/(\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\b)/g, '<span style="color: #bd93f9;">$1</span>');
-        
-        // 高亮端口号
-        html = html.replace(/:(\d{2,5})\b/g, ':<span style="color: #ffb86c; font-weight: 600;">$1</span>');
-        
-        block.innerHTML = html;
-      });
-    });
-  </script>
-
 </head>

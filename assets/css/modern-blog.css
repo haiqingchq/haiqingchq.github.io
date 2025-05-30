@@ -1069,16 +1069,16 @@ p.readmore {
 
 /* 现代化代码块样式 */
 pre {
-  background: linear-gradient(135deg, #1e2937 0%, #111827 100%);
-  color: #f9fafb;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: #f8fafc;
   border-radius: 12px;
   padding: 1.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  font-size: 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 0.95rem;
   overflow-x: auto;
-  box-shadow: var(--shadow-light);
+  box-shadow: var(--shadow-medium);
   position: relative;
-  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', monospace;
   line-height: 1.6;
   font-weight: 500;
 }
@@ -1104,37 +1104,38 @@ pre::before {
   border-radius: 12px 12px 0 0;
 }
 
-/* 增强的语法高亮颜色 */
+/* 增强的语法高亮颜色 - 更亮更清晰 */
 pre .hljs-keyword { color: #ff79c6; font-weight: 600; }
 pre .hljs-string { color: #50fa7b; }
 pre .hljs-number { color: #bd93f9; }
-pre .hljs-comment { color: #8fadc7; font-style: italic; }
+pre .hljs-comment { color: #94a3b8; font-style: italic; }
 pre .hljs-function { color: #8be9fd; font-weight: 600; }
-pre .hljs-variable { color: #f8f8f2; }
+pre .hljs-variable { color: #f8fafc; }
 pre .hljs-attr { color: #ffb86c; }
 pre .hljs-tag { color: #ff79c6; }
 pre .hljs-name { color: #8be9fd; }
 pre .hljs-attribute { color: #50fa7b; }
 
-/* 命令行参数和标志 */
+/* 命令行参数和标志 - 使用最亮的颜色 */
 pre .hljs-params,
 pre .hljs-built_in,
 pre .hljs-literal { 
-  color: #ffd93d; 
-  font-weight: 600; 
+  color: #fbbf24; 
+  font-weight: 700;
+  text-shadow: 0 0 2px rgba(251, 191, 36, 0.5);
 }
 
 /* 特殊符号和操作符 */
 pre .hljs-symbol,
 pre .hljs-operator { 
-  color: #ff6b9d; 
+  color: #f472b6; 
   font-weight: 600; 
 }
 
 /* 类型和类名 */
 pre .hljs-type,
 pre .hljs-class { 
-  color: #74c7ec; 
+  color: #60a5fa; 
   font-weight: 600; 
 }
 
@@ -1146,15 +1147,15 @@ code {
   border-radius: 6px;
   font-size: 0.85em;
   border: 1px solid rgba(220, 38, 38, 0.25);
-  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', monospace;
   font-weight: 600;
 }
 
 /* 确保代码块中的文本可见 */
 .post-content pre {
-  background: linear-gradient(135deg, #1e2937 0%, #111827 100%);
-  color: #f9fafb;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: #f8fafc;
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .post-content code {
@@ -1165,18 +1166,44 @@ code {
 
 /* 针对特定模式的增强 */
 .post-content pre code {
-  color: #f9fafb;
+  color: #f8fafc;
   font-weight: 500;
-}
-
-/* 特殊处理双横线参数 */
-.post-content pre code:contains("--") {
-  color: #ffd93d;
 }
 
 /* 代码块内的特殊文本处理 */
 .post-content pre {
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  text-shadow: none;
+}
+
+/* 隐藏所有可能的行号显示 */
+.lineno,
+.line-numbers,
+.line-number,
+.linenodiv,
+.gutter,
+.rouge-gutter {
+  display: none !important;
+}
+
+/* 确保代码块没有行号相关的边距 */
+.rouge-code-table,
+.rouge-table {
+  border: none !important;
+  margin: 0 !important;
+}
+
+.rouge-code-table .rouge-line,
+.rouge-table .rouge-line {
+  padding-left: 0 !important;
+}
+
+/* 移除可能的行号计数器 */
+pre {
+  counter-reset: none;
+}
+
+pre code {
+  counter-increment: none;
 }
 
 /* 现代化块引用样式 */
@@ -1512,4 +1539,34 @@ pre::after {
 /* 特殊字符和操作符高亮 */
 .hljs-punctuation { color: #cdd6f4 !important; }
 .hljs-operator { color: #ff6b9d !important; font-weight: 600 !important; }
-.hljs-symbol { color: #ffd93d !important; font-weight: 700 !important; } 
+.hljs-symbol { color: #ffd93d !important; font-weight: 700 !important; }
+
+/* 更简单可靠的代码参数样式 */
+.post-content pre,
+.post-content code {
+  font-weight: 500;
+}
+
+/* 提高代码块整体亮度 */
+.post-content pre code {
+  color: #f1f5f9 !important;
+}
+
+/* 专门处理命令行代码块 */
+.post-content pre code {
+  /* 确保基础文本清晰可见 */
+  text-shadow: none;
+}
+
+/* 深色模式代码块优化 */
+@media (prefers-color-scheme: dark) {
+  pre {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%) !important;
+    color: #f8fafc !important;
+  }
+  
+  .post-content pre {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%) !important;
+    color: #f8fafc !important;
+  }
+} 
