@@ -1,118 +1,140 @@
 ---
 layout: blog_layout
 ---
-<h3>K8S</h3>
-{% for post in site.posts %}
-    <!-- 只显示k8s的文章 -->
-    {% if post.category == 'k8s' %}
-        <section class="smenu">
-            {{ post.time  | date: "%Y/%m/%d" }}
-            &nbsp;&nbsp;
-            <a href="{{post.url}}">
-                <span class="glyphicon glyphicon-hand-right">  </span>
-                &nbsp;&nbsp; {{post.title}} &nbsp;&nbsp;
-            </a>
-        </section>
-    {% else %}
-        {% continue %}
-    {% endif %}
-{% endfor %}
-    <!-- 只显示docker的文章 -->
-<h3>Docker</h3>
-{% for post in site.posts %}
-    {% if post.category == 'docker' %}
-        <section class="smenu">
-            {{ post.time  | date: "%Y/%m/%d" }}
-            &nbsp;&nbsp;
-            <a href="{{post.url}}">
-                <span class="glyphicon glyphicon-hand-right">  </span>
-                &nbsp;&nbsp; {{post.title}} &nbsp;&nbsp;
-            </a>
-        </section>
-    {% else %}
-        {% continue %}
-    {% endif %}
-{% endfor %}
+<div class="category-section">
+    <h3><i class="fa fa-cubes"></i> K8S</h3>
+    <div class="category-posts">
+        {% for post in site.posts %}
+            <!-- 只显示k8s的文章 -->
+            {% if post.category == 'k8s' %}
+                <section class="smenu">
+                    <span class="post-date">{{ post.time | date: "%Y/%m/%d" }}</span>
+                    <a href="{{post.url}}">
+                        <i class="fa fa-angle-right"></i>
+                        {{post.title}}
+                    </a>
+                </section>
+            {% else %}
+                {% continue %}
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
 
-<h3>eBPF</h3>
-{% for post in site.posts %}
-    {% if post.category == 'ebpf' %}
-        <section class="smenu">
-            {{ post.time  | date: "%Y/%m/%d" }}
-    &nbsp;&nbsp;
-            <a href="{{post.url}}">
-                <span class="glyphicon glyphicon-hand-right">  </span>
-        &nbsp;&nbsp;         {{post.title}} &nbsp;&nbsp;
-            </a>
-        </section>
-    {% else %}
-        {% continue %}
-    {% endif %}
-{% endfor %}
+<div class="category-section">
+    <h3><i class="fa fa-ship"></i> Docker</h3>
+    <div class="category-posts">
+        {% for post in site.posts %}
+            {% if post.category == 'docker' %}
+                <section class="smenu">
+                    <span class="post-date">{{ post.time | date: "%Y/%m/%d" }}</span>
+                    <a href="{{post.url}}">
+                        <i class="fa fa-angle-right"></i>
+                        {{post.title}}
+                    </a>
+                </section>
+            {% else %}
+                {% continue %}
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
 
+<div class="category-section">
+    <h3><i class="fa fa-code"></i> eBPF</h3>
+    <div class="category-posts">
+        {% for post in site.posts %}
+            {% if post.category == 'ebpf' %}
+                <section class="smenu">
+                    <span class="post-date">{{ post.time | date: "%Y/%m/%d" }}</span>
+                    <a href="{{post.url}}">
+                        <i class="fa fa-angle-right"></i>
+                        {{post.title}}
+                    </a>
+                </section>
+            {% else %}
+                {% continue %}
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
 
-<!--<h3>openTelemetry</h3>-->
-<!--{% for post in site.posts %}-->
-<!--    {% if post.category == 'openTelemetry' %}-->
-<!--        <section class="smenu">-->
-<!--            {{ post.time  | date: "%Y/%m/%d" }}-->
-<!--            &nbsp;&nbsp;-->
-<!--            <a href="{{post.url}}">-->
-<!--                <span class="glyphicon glyphicon-hand-right">  </span>-->
-<!--                &nbsp;&nbsp; {{post.title}} &nbsp;&nbsp;-->
-<!--            </a>-->
-<!--        </section>-->
-<!--    {% else %}-->
-<!--        {% continue %}-->
-<!--    {% endif %}-->
-<!--{% endfor %}-->
+<!--
+<div class="category-section">
+    <h3><i class="fa fa-line-chart"></i> openTelemetry</h3>
+    <div class="category-posts">
+        {% for post in site.posts %}
+            {% if post.category == 'openTelemetry' %}
+                <section class="smenu">
+                    <span class="post-date">{{ post.time | date: "%Y/%m/%d" }}</span>
+                    <a href="{{post.url}}">
+                        <i class="fa fa-angle-right"></i>
+                        {{post.title}}
+                    </a>
+                </section>
+            {% else %}
+                {% continue %}
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
 
-<!--<h3>prometheus</h3>-->
-<!--{% for post in site.posts %}-->
-<!--    {% if post.category == 'prometheus' %}-->
-<!--        <section class="smenu">-->
-<!--            {{ post.time  | date: "%Y/%m/%d" }}-->
-<!--            &nbsp;&nbsp;-->
-<!--            <a href="{{post.url}}">-->
-<!--                <span class="glyphicon glyphicon-hand-right">  </span>-->
-<!--                &nbsp;&nbsp; {{post.title}} &nbsp;&nbsp;-->
-<!--            </a>-->
-<!--        </section>-->
-<!--    {% else %}-->
-<!--        {% continue %}-->
-<!--    {% endif %}-->
-<!--{% endfor %}-->
+<div class="category-section">
+    <h3><i class="fa fa-area-chart"></i> prometheus</h3>
+    <div class="category-posts">
+        {% for post in site.posts %}
+            {% if post.category == 'prometheus' %}
+                <section class="smenu">
+                    <span class="post-date">{{ post.time | date: "%Y/%m/%d" }}</span>
+                    <a href="{{post.url}}">
+                        <i class="fa fa-angle-right"></i>
+                        {{post.title}}
+                    </a>
+                </section>
+            {% else %}
+                {% continue %}
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
+-->
 
-<h3>工作日志</h3>
-{% for post in site.posts %}
-    {% if post.category == 'daily' %}
-        <section class="smenu">
-            {{ post.time  | date: "%Y/%m/%d" }}
-            &nbsp;&nbsp;
-            <a href="{{post.url}}">
-                <span class="glyphicon glyphicon-hand-right">  </span>
-                &nbsp;&nbsp; {{post.title}} &nbsp;&nbsp;
-            </a>
-        </section>
-    {% else %}
-        {% continue %}
-    {% endif %}
-{% endfor %}
+<div class="category-section">
+    <h3><i class="fa fa-calendar-check-o"></i> 工作日志</h3>
+    <div class="category-posts">
+        {% for post in site.posts %}
+            {% if post.category == 'daily' %}
+                <section class="smenu">
+                    <span class="post-date">{{ post.time | date: "%Y/%m/%d" }}</span>
+                    <a href="{{post.url}}">
+                        <i class="fa fa-angle-right"></i>
+                        {{post.title}}
+                    </a>
+                </section>
+            {% else %}
+                {% continue %}
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
 
-<h3>小工具</h3>
-{% for post in site.posts %}
-    {% if post.category == 'tools' %}
-        <section class="smenu">
-            {{ post.time  | date: "%Y/%m/%d" }}
-            &nbsp;&nbsp;
-            <a href="{{post.url}}">
-                <span class="glyphicon glyphicon-hand-right">  </span>
-                &nbsp;&nbsp; {{post.title}} &nbsp;&nbsp;
-            </a>
-        </section>
-    {% else %}
-        {% continue %}
-    {% endif %}
-{% endfor %}
+<div class="category-section">
+    <h3><i class="fa fa-wrench"></i> 小工具</h3>
+    <div class="category-posts">
+        {% for post in site.posts %}
+            {% if post.category == 'tools' %}
+                <section class="smenu">
+                    <span class="post-date">{{ post.time | date: "%Y/%m/%d" }}</span>
+                    <a href="{{post.url}}">
+                        <i class="fa fa-angle-right"></i>
+                        {{post.title}}
+                    </a>
+                </section>
+            {% else %}
+                {% continue %}
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
 
 
