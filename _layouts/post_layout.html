@@ -2,20 +2,58 @@
 <html lang="zh-CN">
     {% include head.html %}
     <body>
+        <!-- 超现代动态背景 -->
+        <div class="animated-background">
+            <div class="particles">
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+            </div>
+            <div class="floating-shapes">
+                <div class="shape"></div>
+                <div class="shape"></div>
+                <div class="shape"></div>
+                <div class="shape"></div>
+                <div class="shape"></div>
+            </div>
+            <div class="stars">
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+            </div>
+        </div>
+
         {% include blog_header.html %}
 
         <main class="blogmain">
             <header>
                 <h1 class="article-title">{{ page.title }}</h1>
                 <p class="article-time">
-                    {{ page.time }},  发表于 <span>{{ page.location }}</span>
+                    <i class="fa fa-calendar"></i> {{ page.time }}
+                    {% if page.location %}
+                    <span class="article-location"><i class="fa fa-map-marker"></i> {{ page.location }}</span>
+                    {% endif %}
+                    {% if page.category %}
+                    <span class="post-category"><i class="fa fa-folder"></i> {{ page.category }}</span>
+                    {% endif %}
                 </p>
-                <p class="article-hint">
-                    如果你对本文有任何的建议或者疑问, 可以在
+                <div class="article-hint">
+                    <i class="fa fa-lightbulb-o"></i> 如果你对本文有任何的建议或者疑问, 可以在
                     <a href="https://github.com/haiqingchq/haiqingchq.github.io/issues" target="_blank">这里给我提 Issues</a>, 谢谢! :)
-                </p>
+                </div>
             </header>
-            {{ content }}
+            <article class="post-content">
+                {{ content }}
+            </article>
             {% include post_footer.html %}
         </main>
 

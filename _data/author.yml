@@ -1,18 +1,25 @@
 # Author settings
 name: 陈海清
-title: k8s 开发工程师
+title: 后端研发工程师
 address: 中国, 岳阳
 email: chenhaiqing4843@gmail.com
-github: github.com/haiqingchq
+github: haiqingchq
 gavatar: /assets/img/owner.jpg
 workHistory:
 - work1:
   company: 杭州端点科技有限公司
   location: 中国, 杭州
-  title: K8s 程序员
+  title: K8s 程序员（实习）
   started: 2024
-  duration: 2024.11 - 至今
-  description:
+  duration: 2024.11 - 2025.5
+  description: 主要从事pipeline维护，Minio集群的设计和搭建
+- work2:
+  company: 深圳市大头文化有限公司
+  location: 中国，长沙
+  title: Go后端开发工程师
+  started: 2025.6
+  duration: 2025.6 - 至今
+  description: 主要从事BI后台开发的工作
 
 educationHistory:
 - education1:
