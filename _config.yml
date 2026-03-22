@@ -12,6 +12,8 @@ url: "https://haiqingchq.github.io"
 baseurl: ""
 repository: "haiqingchq/haiqingchq.github.io"
 favicon: "/assets/img/owner.jpg"
+search: true
+search_full_content: true
 
 # SEO Related
 google_site_verification:
