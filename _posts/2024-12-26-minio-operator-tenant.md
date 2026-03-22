@@ -1,11 +1,8 @@
 ---
-category: k8s
-layout: post_layout
+
+categories: [k8s]
+layout: single
 title: minio-operator
-time: 2024年12月26日 星期四
-location: 杭州
-pulished: true
-excerpt_separator: "##"
 ---
 
 ## 1、自定义minio-operator的Tenant生成的pool名称

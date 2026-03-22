@@ -1,11 +1,8 @@
 ---
-category: go
-layout: post_layout
+
+categories: [go]
+layout: single
 title: clickhouse 底层原理分享
-time: 2025年9月01日 星期一
-location: 杭州
-pulished: true
-excerpt_separator: "**"
 ---
 
 

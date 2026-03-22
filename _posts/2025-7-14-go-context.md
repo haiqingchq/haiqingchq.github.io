@@ -1,11 +1,9 @@
 ---
-category: go
-layout: post_layout
+
+categories: [go]
+layout: single
 title: Go context 标准库深度学习指南 (深度版)
-time: 2024年12月15日 星期日
-location: 杭州
 published: true
-excerpt_separator: "###"
 ---
 
 ## Go context 标准库深度学习指南 (深度版)

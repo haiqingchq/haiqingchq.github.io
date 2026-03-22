@@ -1,11 +1,8 @@
 ---
-category: k8s
-layout: post_layout
+
+categories: [k8s]
+layout: single
 title: 《Kubernetes Pod周期性重启故障排查实录：从宕机到稳定的启示》
-time: 2025年2月25日 星期二
-location: 杭州
-pulished: true
-excerpt_separator: "#"
 ---
 
 最近处理了几个线上问题，在解决问题中，总结以下经验。

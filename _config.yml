@@ -1,23 +1,98 @@
-# Site settings
-title: haiqing chq
-description: haiqing chq
-favicon: /assets/img/owner.jpg
-baseurl:
-url: https://haiqingchq.github.io
-rss_url:
+remote_theme: "mmistakes/minimal-mistakes@4.26.2"
+minimal_mistakes_skin: "default" # 可选: "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
-# Theme
-theme: jekyll-theme-primer
+# Site Settings
+locale: "zh-CN"
+title: "陈海清的博客"
+title_separator: "-"
+subtitle: "后端研发工程师"
+name: "陈海清"
+description: "记录后端开发、K8s、eBPF、Go 等技术学习心得"
+url: "https://haiqingchq.github.io"
+baseurl: ""
+repository: "haiqingchq/haiqingchq.github.io"
+favicon: "/assets/img/owner.jpg"
 
-# Build settings
+# SEO Related
+google_site_verification:
+bing_site_verification:
 
-highlight: true
-#highlighter: rouge
+# Social Sharing
+twitter:
+  username:
 
-timezone: Asia/Shanghai
+# Site Author
+author:
+  name: "陈海清"
+  avatar: "/assets/img/owner.jpg"
+  bio: "后端研发工程师，专注 Go、K8s、eBPF 等云原生技术。"
+  location: "中国, 岳阳"
+  email: "chenhaiqing4843@gmail.com"
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/haiqingchq"
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "mailto:chenhaiqing4843@gmail.com"
 
+# Site Footer
+footer:
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/haiqingchq"
+
+# Reading Files
+include:
+  - .htaccess
+  - _pages
+exclude:
+  - "*.sublime-project"
+  - "*.sublime-workspace"
+  - vendor
+  - .asset-cache
+  - .bundle
+  - .jekyll-assets-cache
+  - .sass-cache
+  - assets/js/plugins
+  - assets/js/_main.js
+  - assets/js/vendor
+  - Capfile
+  - CHANGELOG
+  - config
+  - Gemfile
+  - Gruntfile.js
+  - gulpfile.js
+  - LICENSE
+  - log
+  - node_modules
+  - package.json
+  - package-lock.json
+  - Rakefile
+  - README
+  - tmp
+  - /docs
+  - /test
+  - sonar-project.properties
+  - minio方案
+keep_files:
+  - .git
+  - .svn
+encoding: "utf-8"
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+
+# Conversion
 markdown: kramdown
+highlighter: rouge
+lsi: false
+excerpt_separator: "\n\n"
+incremental: false
+
+# Markdown Processing
 kramdown:
+  input: GFM
+  hard_wrap: false
   auto_ids: true
   footnote_nr: 1
   entity_output: as_char
@@ -25,10 +100,56 @@ kramdown:
   smart_quotes: lsquo,rsquo,ldquo,rdquo
   enable_coderay: false
 
-  coderay:
-    coderay_wrap: div
-    coderay_line_numbers: nil
-    coderay_line_numbers_start: 1
-    coderay_tab_width: 4
-    coderay_bold_every: 10
-    coderay_css: style
+# Sass/SCSS
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# Outputting
+permalink: /:categories/:title/
+paginate: 10
+paginate_path: /page:num/
+timezone: Asia/Shanghai
+
+# Plugins (previously gems:)
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jekyll-include-cache
+  - jekyll-seo-tag
+
+# Archives
+category_archive:
+  type: liquid
+  path: /categories/
+tag_archive:
+  type: liquid
+  path: /tags/
+
+# HTML Compression
+compress_html:
+  clippings: all
+  ignore:
+    envs: development
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: false
+      share: true
+      related: true
+      show_date: true
+  - scope:
+      path: "_pages"
+      type: pages
+    values:
+      layout: single
+      author_profile: true

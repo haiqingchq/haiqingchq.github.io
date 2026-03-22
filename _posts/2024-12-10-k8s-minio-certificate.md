@@ -1,11 +1,8 @@
 ---
-category: k8s
-layout: post_layout
+
+categories: [k8s]
+layout: single
 title: k8s部署minio 证书自动续期
-time: 2024年12月15日 星期日
-location: 杭州
-pulished: true
-excerpt_separator: "##"
 ---
 
 1、在刚遇到这个问题的时候，首先考虑的就是参考官方文档，得到的结果是需要开启自动更新的字段。但是开启之后遇到以下问题：
