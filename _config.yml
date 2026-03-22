@@ -6,6 +6,9 @@ baseurl:
 url: https://haiqingchq.github.io
 rss_url:
 
+# Theme
+theme: jekyll-theme-primer
+
 # Build settings
 
 highlight: true
