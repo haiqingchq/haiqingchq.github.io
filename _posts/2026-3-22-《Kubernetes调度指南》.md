@@ -1,3 +1,12 @@
+---
+category: k8s
+layout: post_layout
+title: Kubernetes调度指南：从kubectl create到Pod运行
+time: 2026年3月22日 星期日
+location: 杭州
+published: true
+excerpt_separator: "##"
+---
 # Kubernetes 调度指南：从 `kubectl create` 到 Pod 运行
 
 > 适合纯新手，用简单比喻理解 Kubernetes 核心组件如何协作
