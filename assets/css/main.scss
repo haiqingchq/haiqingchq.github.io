@@ -1,0 +1,12 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+// 覆盖根字体大小（默认 16px，改为 14px，整体等比缩小）
+$doc-font-size: 14;
+
+// 如需单独调小正文段落字体，可取消注释：
+// $type-size-5: 0.875em;
+
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
+@import "minimal-mistakes";
