@@ -4,20 +4,22 @@ author_profile: true
 ---
 
 <section class="page__content" style="margin-bottom: 1.5rem;">
-  <h2>云原生网络专栏</h2>
-  <p>从 Linux 网络基础到 Service Mesh 核心机制，这是一套可连续阅读的学习路径。</p>
+  <h2>专栏导读</h2>
+  <p>这里收录按学习路径组织的技术专栏，适合连续阅读与体系化学习。</p>
   <p>
-    <a href="{{ '/series/cloud-native-network/' | relative_url }}">进入专栏主页</a>
+    <a href="{{ '/series/' | relative_url }}">进入专栏页</a>
   </p>
 
-  {% assign series_posts = site.posts | where: "series_id", "cloud-native-network" | sort: "series_order" %}
-  {% if series_posts.size > 0 %}
-    <p>当前共 {{ series_posts.size }} 篇：</p>
+  {% assign series_enabled_posts = site.posts | where_exp: "post", "post.series_id" %}
+  {% assign grouped_series = series_enabled_posts | group_by: "series_id" %}
+  {% if grouped_series.size > 0 %}
     <ul>
-      {% for post in series_posts %}
+      {% for group in grouped_series %}
+        {% assign series_posts = group.items | sort: "series_order" %}
+        {% assign series_name = series_posts[0].series | default: group.name %}
         <li>
-          第 {{ post.series_order }} 篇：
-          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          <a href="{{ '/series/' | relative_url }}#series-{{ group.name }}">{{ series_name }}</a>
+          （{{ series_posts.size }} 篇）
         </li>
       {% endfor %}
     </ul>

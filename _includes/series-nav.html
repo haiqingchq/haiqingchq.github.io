@@ -1,5 +1,6 @@
 {% if page.series_id %}
   {% assign series_posts = site.posts | where: "series_id", page.series_id | sort: "series_order" %}
+  {% assign series_name = page.series | default: series_posts[0].series | default: page.series_id %}
   {% assign current_index = nil %}
   {% for p in series_posts %}
     {% if p.url == page.url %}
@@ -22,8 +23,9 @@
 
     <hr />
     <section>
-      <h2>云原生网络专栏</h2>
+      <h2>{{ series_name }}</h2>
       <p>当前进度：第 {{ page.series_order }} 篇 / 共 {{ series_posts.size }} 篇</p>
+      <p><a href="{{ '/series/' | relative_url }}#series-{{ page.series_id }}">查看本专栏目录</a></p>
       <ul>
         {% for post in series_posts %}
           {% if post.url == page.url %}
