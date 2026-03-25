@@ -4,6 +4,9 @@ categories: [network]
 layout: single
 title: kube-proxy 深度解析：从 Service 转发到 iptables 与 ipvs 选型
 published: true
+series: 云原生网络专栏
+series_id: cloud-native-network
+series_order: 3
 ---
 
 # kube-proxy 深度解析：从 Service 转发到 iptables 与 ipvs 选型
@@ -256,3 +259,4 @@ curl -v http://<service-name>:<port>
 
 **Service 是声明，kube-proxy 是落地，conntrack 是记忆。**
 
+{% include series-nav.html %}

@@ -4,6 +4,9 @@ categories: [network]
 layout: single
 title: conntrack 原理与排障实战：从状态跟踪到 Kubernetes 故障定位
 published: true
+series: 云原生网络专栏
+series_id: cloud-native-network
+series_order: 2
 ---
 
 # conntrack 原理与排障实战：从状态跟踪到 Kubernetes 故障定位
@@ -260,3 +263,4 @@ conntrack -L -p udp | wc -l
 
 
 
+{% include series-nav.html %}

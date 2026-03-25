@@ -4,6 +4,9 @@ categories: [network]
 layout: single
 title: iptables 网络专栏：从基础规则到 kube-proxy 与 envoy 实战
 published: true
+series: 云原生网络专栏
+series_id: cloud-native-network
+series_order: 1
 ---
 
 # iptables 网络专栏：从基础规则到 kube-proxy 与 envoy 实战
@@ -298,4 +301,6 @@ iptables -t nat -L -n | grep KUBE
 - `conntrack` 原理与排障
 - `nftables` 与 `iptables` 关系
 - `kube-proxy` 的 `iptables` 模式 vs `ipvs` 模式
+
+{% include series-nav.html %}
 

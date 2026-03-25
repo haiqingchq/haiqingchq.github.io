@@ -1,0 +1,46 @@
+{% if page.series_id %}
+  {% assign series_posts = site.posts | where: "series_id", page.series_id | sort: "series_order" %}
+  {% assign current_index = nil %}
+  {% for p in series_posts %}
+    {% if p.url == page.url %}
+      {% assign current_index = forloop.index0 %}
+    {% endif %}
+  {% endfor %}
+
+  {% if current_index != nil %}
+    {% assign prev_index = current_index | minus: 1 %}
+    {% assign next_index = current_index | plus: 1 %}
+    {% assign prev_post = nil %}
+    {% assign next_post = nil %}
+
+    {% if prev_index >= 0 %}
+      {% assign prev_post = series_posts[prev_index] %}
+    {% endif %}
+    {% if next_index < series_posts.size %}
+      {% assign next_post = series_posts[next_index] %}
+    {% endif %}
+
+    <hr />
+    <section>
+      <h2>云原生网络专栏</h2>
+      <p>当前进度：第 {{ page.series_order }} 篇 / 共 {{ series_posts.size }} 篇</p>
+      <ul>
+        {% for post in series_posts %}
+          {% if post.url == page.url %}
+            <li><strong>第 {{ post.series_order }} 篇（当前）：{{ post.title }}</strong></li>
+          {% else %}
+            <li><a href="{{ post.url | relative_url }}">第 {{ post.series_order }} 篇：{{ post.title }}</a></li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+      <p>
+        {% if prev_post %}
+          上一篇：<a href="{{ prev_post.url | relative_url }}">{{ prev_post.title }}</a><br />
+        {% endif %}
+        {% if next_post %}
+          下一篇：<a href="{{ next_post.url | relative_url }}">{{ next_post.title }}</a>
+        {% endif %}
+      </p>
+    </section>
+  {% endif %}
+{% endif %}
