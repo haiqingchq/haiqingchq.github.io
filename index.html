@@ -3,17 +3,23 @@ layout: home
 author_profile: true
 ---
 
-## 云原生网络专栏
+<section class="page__content" style="margin-bottom: 1.5rem;">
+  <h2>云原生网络专栏</h2>
+  <p>从 Linux 网络基础到 Service Mesh 核心机制，这是一套可连续阅读的学习路径。</p>
+  <p>
+    <a href="{{ '/series/cloud-native-network/' | relative_url }}">进入专栏主页</a>
+  </p>
 
-从 Linux 网络基础到 Service Mesh 核心机制，这是一套可连续阅读的学习路径。
-
-[进入专栏主页]({{ "/series/cloud-native-network/" | relative_url }})
-
-{% assign series_posts = site.posts | where: "series_id", "cloud-native-network" | sort: "series_order" %}
-{% if series_posts.size > 0 %}
-当前共 {{ series_posts.size }} 篇：
-
-{% for post in series_posts %}
-- 第 {{ post.series_order }} 篇：[{{ post.title }}]({{ post.url | relative_url }})
-{% endfor %}
-{% endif %}
+  {% assign series_posts = site.posts | where: "series_id", "cloud-native-network" | sort: "series_order" %}
+  {% if series_posts.size > 0 %}
+    <p>当前共 {{ series_posts.size }} 篇：</p>
+    <ul>
+      {% for post in series_posts %}
+        <li>
+          第 {{ post.series_order }} 篇：
+          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+</section>
