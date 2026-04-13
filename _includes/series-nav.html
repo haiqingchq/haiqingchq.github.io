@@ -1,48 +1,48 @@
 {% if page.series_id %}
-  {% assign series_posts = site.posts | where: "series_id", page.series_id | sort: "series_order" %}
-  {% assign series_name = page.series | default: series_posts[0].series | default: page.series_id %}
-  {% assign current_index = nil %}
-  {% for p in series_posts %}
-    {% if p.url == page.url %}
-      {% assign current_index = forloop.index0 %}
-    {% endif %}
-  {% endfor %}
+{% assign series_posts = site.posts | where: "series_id", page.series_id | sort: "series_order" %}
+{% assign series_name = page.series | default: series_posts[0].series | default: page.series_id %}
+{% assign current_index = nil %}
+{% for p in series_posts %}
+{% if p.url == page.url %}
+{% assign current_index = forloop.index0 %}
+{% endif %}
+{% endfor %}
 
-  {% if current_index != nil %}
-    {% assign prev_index = current_index | minus: 1 %}
-    {% assign next_index = current_index | plus: 1 %}
-    {% assign prev_post = nil %}
-    {% assign next_post = nil %}
+{% if current_index != nil %}
+{% assign prev_index = current_index | minus: 1 %}
+{% assign next_index = current_index | plus: 1 %}
+{% assign prev_post = nil %}
+{% assign next_post = nil %}
 
-    {% if prev_index >= 0 %}
-      {% assign prev_post = series_posts[prev_index] %}
-    {% endif %}
-    {% if next_index < series_posts.size %}
-      {% assign next_post = series_posts[next_index] %}
-    {% endif %}
+{% if prev_index >= 0 %}
+{% assign prev_post = series_posts[prev_index] %}
+{% endif %}
+{% if next_index < series_posts.size %}
+{% assign next_post = series_posts[next_index] %}
+{% endif %}
 
-    <hr />
-    <section>
-      <h2>{{ series_name }}</h2>
-      <p>当前进度：第 {{ page.series_order }} 篇 / 共 {{ series_posts.size }} 篇</p>
-      <p><a href="{{ '/series/' | relative_url }}#series-{{ page.series_id }}">查看本专栏目录</a></p>
-      <ul>
-        {% for post in series_posts %}
-          {% if post.url == page.url %}
-            <li><strong>第 {{ post.series_order }} 篇（当前）：{{ post.title }}</strong></li>
-          {% else %}
-            <li><a href="{{ post.url | relative_url }}">第 {{ post.series_order }} 篇：{{ post.title }}</a></li>
-          {% endif %}
-        {% endfor %}
-      </ul>
-      <p>
-        {% if prev_post %}
-          上一篇：<a href="{{ prev_post.url | relative_url }}">{{ prev_post.title }}</a><br />
-        {% endif %}
-        {% if next_post %}
-          下一篇：<a href="{{ next_post.url | relative_url }}">{{ next_post.title }}</a>
-        {% endif %}
-      </p>
-    </section>
-  {% endif %}
+<hr />
+<section class="series-nav" style="margin-top: 2em; padding: 1em; background-color: rgba(128, 128, 128, 0.05); border-radius: 8px;">
+<h2>{{ series_name }}</h2>
+<p>当前进度：第 {{ page.series_order }} 篇 / 共 {{ series_posts.size }} 篇</p>
+<p><a href="{{ '/series/' | relative_url }}#series-{{ page.series_id }}">查看本专栏目录</a></p>
+<ul>
+{% for post in series_posts %}
+{% if post.url == page.url %}
+<li><strong>第 {{ post.series_order }} 篇（当前）：{{ post.title }}</strong></li>
+{% else %}
+<li><a href="{{ post.url | relative_url }}">第 {{ post.series_order }} 篇：{{ post.title }}</a></li>
+{% endif %}
+{% endfor %}
+</ul>
+<p style="margin-top: 1em; border-top: 1px solid rgba(128, 128, 128, 0.2); padding-top: 1em;">
+{% if prev_post %}
+上一篇：<a href="{{ prev_post.url | relative_url }}">{{ prev_post.title }}</a><br />
+{% endif %}
+{% if next_post %}
+下一篇：<a href="{{ next_post.url | relative_url }}">{{ next_post.title }}</a>
+{% endif %}
+</p>
+</section>
+{% endif %}
 {% endif %}
