@@ -2,11 +2,34 @@
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
 
-// 覆盖根字体大小（默认 16px，改为 14px，整体等比缩小）
-$doc-font-size: 14;
-
-// 如需单独调小正文段落字体，可取消注释：
-// $type-size-5: 0.875em;
+// ----------------------------------------------------------------------------
+// 标题字号收敛（在 @import 前覆盖，利用 !default 机制生效）
+// 默认值：$type-size-1: 2.441em / $type-size-2: 1.953em / $type-size-3: 1.563em
+// ----------------------------------------------------------------------------
+$type-size-1: 2em;
+$type-size-2: 1.6em;
+$type-size-3: 1.35em;
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
 @import "minimal-mistakes";
+
+// ----------------------------------------------------------------------------
+// minimal-mistakes 4.26.2 的 _reset.scss 把 html 的 font-size 写死成
+// 16/18/20/22px（按断点放大），并不读取 $doc-font-size 变量。
+// 因此必须在 @import 之后再次覆盖 html font-size，覆盖原始声明。
+// ----------------------------------------------------------------------------
+html {
+  font-size: 14px;
+
+  @include breakpoint($medium) {
+    font-size: 15px;
+  }
+
+  @include breakpoint($large) {
+    font-size: 16px;
+  }
+
+  @include breakpoint($x-large) {
+    font-size: 16px;
+  }
+}
