@@ -15,6 +15,7 @@ _posts/
 ├── go/                 # Go 语言、底层数据库等
 ├── k8s/                # Kubernetes 相关
 ├── mcp/                # MCP 协议
+├── memory/             # 内存原理专栏（用户态分配器 + 内核内存管理）
 ├── network/            # 云原生网络专栏（含 iptables / Envoy / kube-proxy / metallb 等）
 │   └── xds/            # network 下的 xDS 子专栏
 ├── openTelemetry/      # 可观测性 - OpenTelemetry
