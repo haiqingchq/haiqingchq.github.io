@@ -9,8 +9,6 @@ series_id: cloud-native-network
 series_order: 2
 ---
 
-# conntrack 原理与排障实战：从状态跟踪到 Kubernetes 故障定位
-
 在理解 `iptables` 之后，下一步最值得学习的就是 `conntrack`。  
 因为很多你在生产中遇到的网络问题，本质都和连接跟踪表有关：
 

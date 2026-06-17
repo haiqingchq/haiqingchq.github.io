@@ -7,8 +7,6 @@ title: clickhouse 底层原理分享
 
 
 
-## 大纲
-
 [TOC]
 
 ## 一、引入

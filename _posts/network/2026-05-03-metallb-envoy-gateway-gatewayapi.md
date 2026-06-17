@@ -10,8 +10,6 @@ series_order: 4
 
 ---
 
-# Kubernetes 外部流量接入实战：MetalLB + Envoy Gateway + Gateway API
-
 ## 前言
 
 在 Kubernetes 中，如何让集群外部的流量访问到集群内的服务，是一个核心问题。

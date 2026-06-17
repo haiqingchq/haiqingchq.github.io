@@ -5,8 +5,6 @@ layout: single
 title: minio-operator
 ---
 
-## 1、自定义minio-operator的Tenant生成的pool名称
-
 [自定义名称](https://github.com/minio/operator/blob/master/docs/custom-name-templates.md)
 
 [Minio Tenant 扩容](https://github.com/minio/operator/blob/master/docs/expansion.md)

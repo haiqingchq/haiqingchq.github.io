@@ -9,8 +9,6 @@ series_id: cloud-native-network
 series_order: 3
 ---
 
-# kube-proxy 深度解析：从 Service 转发到 iptables 与 ipvs 选型
-
 > 面向 Kubernetes 实战，建立“概念 -> 数据路径 -> 模式差异 -> 排障”的完整认知
 
 如果你已经学过 `iptables` 和 `conntrack`，那下一步理解 `kube-proxy` 会非常顺畅。  

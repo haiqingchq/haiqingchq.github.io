@@ -8,8 +8,6 @@ series_id: xds-dev
 series_order: 2
 ---
 
-# xDS 控制面实战 (二)：Simple Cache 是如何“偷懒”又如何“爆掉”的？
-
 在上一篇中，我们知道了控制面的核心是“大黑板”也就是 Cache。今天我们要聊聊，`go-control-plane` 里最常用的第一块黑板：**Simple Cache (简单缓存)**。
 
 别看它的名字叫“Simple”，绝大部分开源自研控制面刚起步时，用的都是它！它对新手极其友好，但也隐藏着巨大的坑。

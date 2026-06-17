@@ -9,8 +9,6 @@ series_id: cloud-native-network
 series_order: 1
 ---
 
-# iptables 网络专栏：从基础规则到 kube-proxy 与 envoy 实战
-
 > 面向 Linux / 云原生工程师，建立从「规则语法」到「生产链路」的完整认知
 
 ## 1. 什么是 iptables？

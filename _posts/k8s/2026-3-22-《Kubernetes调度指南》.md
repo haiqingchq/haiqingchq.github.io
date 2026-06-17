@@ -5,7 +5,6 @@ layout: single
 title: Kubernetes调度指南：从kubectl create到Pod运行
 published: true
 ---
-# Kubernetes 调度指南：从 `kubectl create` 到 Pod 运行
 
 > 适合纯新手，用简单比喻理解 Kubernetes 核心组件如何协作
 

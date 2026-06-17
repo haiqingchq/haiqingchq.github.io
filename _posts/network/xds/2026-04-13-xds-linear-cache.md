@@ -8,8 +8,6 @@ series_id: xds-dev
 series_order: 3
 ---
 
-# xDS 控制面实战 (三)：Linear Cache 大揭秘，如何省下 90% 的内存？
-
 上一篇文章里我们留了一个悬念：既然 1 万个 Envoy 代理需要的配置其实 99% 都一模一样，那为什么控制面（Simple Cache）还要傻乎乎地在内存里复制 1 万遍呢，这不是白白浪费服务器吗？
 
 为了解决这个“堆抽屉”的痛点，`go-control-plane` 为大内卷时代的大佬们准备了一件神器——**Linear Cache (线性缓存)**。
